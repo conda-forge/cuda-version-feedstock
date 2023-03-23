@@ -149,4 +149,5 @@ Feedstock Maintainers
 =====================
 
 * [@adibbley](https://github.com/adibbley/)
+* [@jakirkham](https://github.com/jakirkham/)
 
