@@ -1,5 +1,5 @@
-{% set version = "12.0.0" %}
-{% set major_version = version.split('.')[0]|int %}
+{% set version = major_minor_ver|default("12.0") %}
+{% set major_version = version.split(".", 1)[0]|int %}
 
 package:
   name: cuda-version
