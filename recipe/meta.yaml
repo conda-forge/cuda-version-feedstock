@@ -32,6 +32,9 @@ about:
   doc_url: https://docs.nvidia.com/cuda/index.html
 
 extra:
+  # Include `version` to ensure conda-build differentiates each version build.
+  # As a result, this helps conda-smithy render the different build variants.
+  version: {{ version }}
   recipe-maintainers:
     - adibbley
     - jakirkham
