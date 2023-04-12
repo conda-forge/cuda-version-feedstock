@@ -1,11 +1,11 @@
-About cuda-version
-==================
+About cuda-version-feedstock
+============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cuda-version-feedstock/blob/main/LICENSE.txt)
 
 Home: https://developer.nvidia.com/cuda-toolkit
 
 Package license: [LicenseRef-NVIDIA-End-User-License-Agreement](https://docs.nvidia.com/cuda/eula/index.html)
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cuda-version-feedstock/blob/main/LICENSE.txt)
 
 Summary: A meta-package for pinning to a CUDA release version
 
@@ -149,4 +149,5 @@ Feedstock Maintainers
 =====================
 
 * [@adibbley](https://github.com/adibbley/)
+* [@jakirkham](https://github.com/jakirkham/)
 
