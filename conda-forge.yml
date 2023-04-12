@@ -1,3 +1,5 @@
+azure:
+   max_parallel: 1
 github:
   branch_name: main
   tooling_branch_name: main
