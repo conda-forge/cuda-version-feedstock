@@ -12,9 +12,8 @@ build:
 
 requirements:
   run_constrained:
-    {% if version is defined %}
-    # Set lower bound to CUDA major version
-    - __cuda >={{ version.split(".", 1)[0] }}
+    {% if version is defined %}                # Safe-guard for early parsing
+    - __cuda >={{ version.split(".", 1)[0] }}  # Major version is lower bound
     {% endif %}
 
 test:
