@@ -1,6 +1,3 @@
-{% set version = major_minor_ver|default("12.0") %}
-{% set major_version = version.split(".", 1)[0]|int %}
-
 package:
   name: cuda-version
   version: {{ version }}
@@ -15,7 +12,10 @@ build:
 
 requirements:
   run_constrained:
-    - __cuda >={{ major_version }}
+    {% if version is defined %}
+    # Set lower bound to CUDA major version
+    - __cuda >={{ version.split(".", 1)[0] }}
+    {% endif %}
 
 test:
   commands:
@@ -32,9 +32,6 @@ about:
   doc_url: https://docs.nvidia.com/cuda/index.html
 
 extra:
-  # Include `major_minor_ver` to ensure conda-build differentiates each build.
-  # As a result, this helps conda-smithy render the different build variants.
-  version: {{ major_minor_ver }}
   recipe-maintainers:
     - adibbley
     - jakirkham
