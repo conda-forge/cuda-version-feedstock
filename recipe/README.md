@@ -11,6 +11,7 @@ Questions/demands listed below are addressed:
 - What CUDA compiler version a package was built with?
 - The ability to get a specific shipped full toolkit at a given version, i.e. 12.0 or 12.1.
 - The ability to get specific packages at a given toolkit version, i.e. 12.0 or 12.1.
+- Support for CUDA minor version compatibility
 - Not to allow solving to an incompatible environment
 
 ## Out-of-scope for `cuda-version`
@@ -48,9 +49,10 @@ Unclear if possible under the "tight constraint" scheme that we plan to adopt.
 
 Example: nvcc from the CTK version X.Y
 ```yaml
-- run_exports:
-  - cuda-version >=X.Y,<X+1
-```
+build:
+  run_exports:
+    strong:
+      - cuda-version >=X.Y,<X+1
 
 ### For maintainers of all CTK components
 
