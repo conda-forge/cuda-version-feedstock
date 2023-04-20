@@ -14,6 +14,7 @@ requirements:
   run_constrained:
     {% if version is defined %}                # Safe-guard for early parsing
     - __cuda >={{ version.split(".", 1)[0] }}  # Major version is lower bound
+    - cudatoolkit {{ version }}                # Align `cudatoolkit` version
     {% endif %}
 
 test:
