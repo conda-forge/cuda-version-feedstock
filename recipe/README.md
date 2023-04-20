@@ -56,15 +56,20 @@ Example: nvcc from the CTK version X.Y
 
 Example: cuBLAS from the CTK version X.Y
 ```yaml
+- host:
+  - cuda-version X.Y
 - run:
-  - cuda-version =X.Y
+  - {{ pin_compatible("cuda-version", max_pin="x.x") }}
 ```
 
 Example: cuSOLVER depends on cuBLAS from the same CTK version X.Y
 ```yaml
+- host:
+  - cuda-version X.Y
+  - libcublas
 - run:
-  - cuda-cublas
-  - cuda-version =X.Y
+  - {{ pin_compatible("cuda-version", max_pin="x.x") }}
+  - {{ pin_compatible("libcublas", max_pin="x.x") }}
 ```
 
 ### For maintainers of GPU packages depending on CUDA
@@ -72,8 +77,8 @@ Example: cuSOLVER depends on cuBLAS from the same CTK version X.Y
 Example: A package depends on cuBLAS and supports CUDA minor version compatibility
 ```yaml
 - run:
-  - cuda-cublas
   - cuda-version >=X.0,<X+1
+  - libcublas
 ```
 
 ### For users of GPU packages
