@@ -7,13 +7,14 @@ source:
   sha256: 5db25d4fd138013b563f9a3d1d87f7de7df1dac014fd4cccdfbb3435a5cff761
 
 build:
-  number: 0
+  number: 1
   noarch: generic
 
 requirements:
   run_constrained:
     {% if version is defined %}                # Safe-guard for early parsing
     - __cuda >={{ version.split(".", 1)[0] }}  # Major version is lower bound
+    - cudatoolkit {{ version }}                # Align `cudatoolkit` version
     {% endif %}
 
 test:
