@@ -33,5 +33,6 @@ about:
 
 extra:
   recipe-maintainers:
+    - conda-forge/cuda
     - adibbley
     - jakirkham
