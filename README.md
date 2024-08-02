@@ -148,5 +148,5 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@conda-forge/cuda](https://github.com/conda-forge/cuda/)
+* [@conda-forge/cuda](https://github.com/orgs/conda-forge/teams/cuda/)
 
